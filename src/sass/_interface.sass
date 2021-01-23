@@ -1,0 +1,477 @@
+/*INTERFACE*/
+.container
+  max-width: 1200px
+  //border: 2px solid blue
+  margin: 0 auto
+  display: flex
+  justify-content: space-between
+
+.notify
+  /*Оповещение*/
+  position: absolute
+  top: -10px
+  right: 2px
+  display: flex
+  justify-content: center
+  align-items: center
+  width: 20px
+  height: 20px
+  border-radius: 50%
+  border: 1px solid #FFFFFF
+  background: $notify-color
+  font-size: 14px
+  line-height: 20px
+  color: $text-color-light
+
+.button-nav
+  /*Кнопка навигации*/
+  display: none
+  flex-direction: column
+  align-items: center
+  justify-content: space-between
+  width: 18px
+  height: 18px
+  padding: 0
+  border: 1px solid transparent
+  border-radius: 4px
+  margin-left: 10px
+  margin-right: 10px
+  background: transparent
+  transition: all 0.5s ease
+  &:hover
+    background: 1px solid $text-color-light
+  &__line
+    display: block
+    width: 100%
+    height: 2px
+    background: $text-color-light
+    border-radius: 2px
+
+.user
+  display: flex
+  align-items: center
+  &-logo
+    width: 32px
+    height: 32px
+    border-radius: 50%
+    margin-right: 8px
+  &-name
+    color: $text-color-light
+    font-weight: 700
+    line-height: 1.57
+    text-decoration: none
+    cursor: pointer
+    transition: all 0.5s ease
+    &:hover
+      text-decoration: underline
+  &-avatar
+    width: 100%
+
+.controls
+  list-style: none
+  padding: 0
+  margin: 0
+  &__link
+    position: relative
+    display: flex
+    align-items: center
+    text-decoration: none
+    color: $text-color
+    font-size: 14px
+    padding: 5px 10px
+    border-radius: 4px
+    border: transparent
+    transition: all 0.5s ease
+    &:hover
+      color: $text-color-dark
+      background: $text-color-light
+      font-weight: 700
+      .controls__dots
+        display: block
+  &__img
+    margin-right: 8px
+  &__dots
+    position: absolute
+    display: none
+    content: ''
+    right: 8px
+
+.tag-list
+  list-style: none
+  padding: 0
+  margin: 0
+  &__link
+    padding: 5px 10px
+    color: $text-color
+    font-size: 14px
+    display: flex
+    align-items: center
+    border-radius: 4px
+    border: transparent
+    transition: all 0.5s ease
+    text-decoration: none
+    &:hover
+      font-weight: 700
+      background: $text-color-light
+  &__img
+    margin-right: 8px
+  &__more
+    margin-top: 12px
+    color: $text-link
+    &:hover
+      font-weight: 400
+      background: transparent
+      text-decoration: underline
+
+.create-post, .post
+  margin-bottom: 16px
+  background: #FFFFFF
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15)
+  border-radius: 4px
+  &__header
+    padding: 9px 16px
+    color: $text-color
+    background: $bg-color
+    border-bottom: 1px solid #D9D9D9
+  &__user
+    padding: 16px 16px 24px 16px
+    border-bottom: 1px solid #E8E8E8
+  &__logo
+    flex-shrink: 0
+    width: 40px
+    height: 40px
+    margin-right: 16px
+  &__text
+    color: $spec-color
+    width: 100%
+    overflow-wrap: anywhere
+    &:focus
+      outline: none
+  &__footer
+    padding: 16px
+    display: flex
+    flex-wrap: wrap
+  &__more
+    margin-right: 0!important
+
+
+
+.tag
+  padding: 8px 12px
+  margin-right: 8px
+  //max-width: 130px
+  display: flex
+  align-items: center
+  font-weight: 700
+  font-size: 14px
+  line-height: 1.57
+  background: $bg-color
+  border-radius: 48px
+  text-decoration: none
+  color: $text-color
+  margin-bottom: 5px
+  transition: all 0.5s ease
+  &:hover
+    background: darken($bg-color, 10)
+  &:last-child
+    margin-right: 0
+    //margin-bottom: 0
+  &__img
+    margin-right: 11px
+
+
+
+.post
+  padding: 16px 16px 25px 16px
+  &-header
+    margin-bottom: 16px
+    &__logo
+      margin-right: 12px
+      width: 48px
+      height: 48px
+      flex-shrink: 0
+    &__info
+      width: 100%
+      display: flex
+      flex-direction: column
+    &__title
+      display: flex
+      justify-content: space-between
+    &__name
+      color: $title-color
+    &__details
+      display: flex
+      align-items: center
+      color: $spec-color
+    &__time
+      display: flex
+      align-items: center
+      position: relative
+      padding-right: 6px
+      margin-right: 12px
+      &::after
+        position: absolute
+        display: block
+        content: ''
+        width: 4px
+        height: 4px
+        border-radius: 50%
+        background: $spec-color
+        right: -4px
+    &__setting
+      display: flex
+    &__img
+      width: 14px
+      height: 14px
+
+
+  &-content
+    position: relative
+    margin-bottom: 40px
+    &__text
+      margin: 16px 0
+      color: $text-color
+      line-height: 1.57
+    &__more
+      color: $text-color
+    &__link
+      color: $text-link
+      text-decoration: none
+    &__img
+      margin-top: 16px
+      width: 100%
+  &-like
+    position: absolute
+    bottom: -18px
+    left: 0
+    display: flex
+    align-items: center
+    &__button
+      width: 16px
+      height: 16px
+      margin-right: 4px
+      padding: 0
+      border: none
+      background: transparent
+      cursor: pointer
+    &__icon
+      fill: transparent
+      &-active
+        fill: $text-link
+    &__count
+      color: $text-color
+
+  &-footer
+    padding-top: 16px
+    border-top: 1px solid #E8E8E8
+    display: flex
+    justify-content: space-around
+    &__tag
+      display: flex
+      padding: 0
+      background: transparent
+
+      text-decoration: none
+      color: $text-color
+      font-size: 14px
+      font-weight: 700
+      line-height: 1.57
+      transition: all 0.5s ease
+      &:hover
+        color: $text-link
+        .post-footer__img
+          fill: $text-link
+    &__img
+      margin-right: 10px
+      fill: #595959
+      transition: all 0.5s ease
+
+.option-panel
+  padding: 16px 16px 16px 24px
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 4px
+  background: #FFFFFF
+  &__header
+    display: flex
+    justify-content: space-between
+    margin-bottom: 16px
+  &__title
+    color: $text-color-dark
+    font-size: 14px
+  &__details
+    display: flex
+    align-items: center
+  &__option
+    position: relative
+    display: flex
+    align-items: center
+    margin-right: 8px
+    color: $title-color
+    font-size: 14px
+    line-height: 1.57
+    text-decoration: none
+    &:first-child
+      &::after
+        position: absolute
+        content: ''
+        display: block
+        width: 4px
+        height: 4px
+        right: -10px
+        border-radius: 50%
+        background: #BFBFBF
+
+    &:last-child
+      margin-left: 8px
+      margin-right: 0
+  &__icon
+    width: 16px
+    height: 16px
+    margin-right: 9px
+  &__list
+    /*Story list*/
+    margin: 0
+    padding: 0
+    list-style: none
+  &__item
+    display: flex
+    align-items: center
+    margin-bottom: 16px
+    &:last-child
+      margin-bottom: 0
+  &__img
+    width: 48px
+    height: 48px
+    margin-right: 12px
+  &__content
+    display: flex
+    flex-direction: column
+
+  &__wrap
+    display: flex
+  &__file
+    overflow: hidden
+    width: 1px
+    height: 1px
+    opacity: 0
+    position: absolute
+    z-index: -1
+  &__label
+    width: 48px
+    height: 48px
+    background: url("../img/create-story.png") center center no-repeat
+    background-size: cover
+    margin-right: 12px
+    cursor: pointer
+
+  &__addlink
+    font-size: 14px
+    font-weight: 700
+    line-height: 1.57
+    text-decoration: none
+    overflow-wrap: anywhere
+  &__descr
+    line-height: 1.57
+    color: $spec-color
+    overflow-wrap: anywhere
+  &__img
+    width: 48px
+    height: 48px
+    margin-right: 12px
+
+  &__link
+    display: block
+    color: $title-color
+    font-size: 14px
+    font-weight: 700
+    line-height: 1.57
+    text-decoration: none
+    transition: all 0.5s ease
+    &:hover
+      text-decoration: underline
+
+.birthday
+  padding: 16px
+  &__descr
+    display: flex
+    align-items: center
+    margin: 0
+  &__img
+    width: 24px
+    height: 24px
+    margin-right: 8px
+
+.fanpage
+  padding: 9px 16px 16px 16px
+  &__title
+    color: $text-color
+    margin-bottom: 0
+  &__content
+    display: flex
+    padding: 16px 0
+    border-top: 1px solid #D9D9D9
+    border-bottom: 1px solid #D9D9D9
+  &__main
+    display: flex
+    flex-direction: column
+  &__link
+    margin-right: 4px
+    &:hover
+      text-decoration: none
+  &__details
+    display: flex
+    flex-direction: column
+  &__detail
+    display: flex
+    align-items: center
+    color: $spec-color
+    margin-bottom: 5px
+    &:last-child
+      margin-bottom: 0
+  &__img
+    margin-right: 5px
+
+  &__footer
+    padding-top: 16px
+  &__controls
+    display: flex
+    margin-bottom: 16px
+  &__button
+    padding: 8px 16px
+    color: $text-color
+    font-size: 16px
+    line-height: 1.5
+    border: 1px solid #D9D9D9
+    background: #FFFFFF
+    border-radius: 4px
+    max-width: 116px
+    width: 100%
+    cursor: pointer
+    &:hover
+      border: 1px solid $text-link
+      color: $text-link
+  &__button-active
+    /*Active style*/
+    border: 1px solid $text-link
+    color: $text-link
+  &__count
+    display: flex
+    flex-direction: column
+    text-align: center
+    align-items: center
+    font-size: 24px
+    line-height: 1.33
+    font-weight: 700
+    color: $active-color
+  &__info
+    color: $spec-color
+    font-size: 14px
+    line-height: 1.57
+    font-weight: 400
+
+
+
+
+
+/*END INTERFACE*/
+

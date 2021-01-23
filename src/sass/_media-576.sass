@@ -1,0 +1,61 @@
+@media (max-width: 576px)
+  /*Mobile*/
+  .d-mobile
+    display: none
+  .button-nav
+    display: flex
+  .container
+    max-width: none
+    flex-direction: column
+    width: 100%
+  .header
+    &-container
+      max-width: none
+      width: 100%
+  .main
+    margin-top: 60px
+    &-feed
+      margin-top: 0
+      margin-left: 0
+      width: 100%
+  .left-sidebar
+    max-width: none
+    margin-bottom: 10px
+    &__controls
+      margin-bottom: 0
+
+  .header
+    &-navigation
+      position: absolute
+      padding: 30px 0
+      top: 0
+      left: -40%
+      width: 40%
+      height: 100vh
+      background: #0050B3
+      z-index: 100
+      display: flex
+      flex-direction: column
+      transition: all 0.5s ease
+
+      &__active
+        left: 0
+
+      &__list
+        flex-direction: column
+        align-items: center
+        justify-content: center
+      &__item
+        display: block
+        width: 100%
+        text-align: center
+        padding: 0
+        &::before
+          display: none
+      &__item
+        &:last-child
+         &::after
+           display: none
+
+
+
