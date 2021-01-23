@@ -4,7 +4,7 @@
  * sass
  * проект адаптивен под разные расширения устройств
 
- Результат работы проекта [Distance](https://samokhindmitro.github.io/cardboard-bootstrap-nodejs/) <br>
+ Результат работы проекта [Distance](https://samokhindmitro.github.io/distance/) <br>
  Все исходные данные проекта в ветке source
  
 
